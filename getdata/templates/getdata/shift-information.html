@@ -1,0 +1,440 @@
+{% load static %}
+{% block content %}
+<!-- 
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne"><div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne"> -->
+
+
+
+<div class="row my-3">
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <!-- <button class="accordion-button collapsed show py-2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne"> -->
+                <button class="accordion-button py-2" type="button" style="background-color: color(srgb 0.9159 0.9257 0.9387);" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+                        <h4 class="my-auto text-body">Shift Information</h4>
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                
+                <div class="accordion-body">
+                    
+
+                    <div class="row justify-content-center">
+                        <!-- <div class="collapse show" id="collapseExample">
+                            <div class="row"> -->
+                    
+                                <div class="col-sm-auto px-3">
+                                    
+                                    <div class="card col-sm-auto h-100">
+                                        <div class="card-header">
+                                            Tips Earned
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col-sm-auto flex-fill my-auto">Cash Tips:</div>
+                                                    <div class="col-sm-auto">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text" id="inputGroupPrepend">$</div>
+                                                            <input type="text" class="form-control tip-input" id="tips-cash" style="width: 100px;" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col-sm-auto flex-fill my-auto">CC Tips:</div>
+                                                    <div class="col-sm-auto">
+                                                        <div class="input-group align-items-end">
+                                                            <div class="input-group-text">$</div>
+                                                            <input type="text" class="form-control tip-input" id="tips-cc" style="width: 100px;" id="cashTips" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col-sm-auto flex-fill my-auto">Total Tips:</div>
+                                                    <div class="col-sm-auto">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text">$</div>
+                                                            <input type="text" class="form-control" style="width: 100px;" id="tips-total" placeholder="0.00" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                        </ul>
+                                    </div>
+                                </div>
+                    
+                                <div class="col-sm-auto px-3">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <span>Midshift Pull (Optional)</span>
+                                            <div class="form-check form-check-inline mx-0 float-end" id="midshift-toggle">
+                                                <input class="form-check-input mx-0" type="checkbox" id="midshift-check-input" value="">
+                                                <label class="form-check-label" for="inlineCheckbox1"></label>
+                                            </div>
+                                        </div>
+                        
+                                        
+                                        <ul class="list-group list-group-flush">
+                                            
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col-auto flex-fill my-auto">CC Tips Pulled:</div>
+                                                    <div class="col-sm-auto">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text">$</div>
+                                                            <input type="text" class="form-control" id="cc-pulled" style="width: 92px;" placeholder="0.00" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col-auto flex-fill my-auto">Time of Pull:</div>
+                                                    <div class="col-sm-auto">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" id="pull-time" style="width: 128px;" placeholder="" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col-auto flex-fill my-auto">Tips to Distribute:</div>
+                                                    <div class="col-sm-auto">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text">$</div>
+                                                            <input type="text" class="form-control" id="tips-distribute" style="width: 92px;" placeholder="0.00" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                    
+                                <div class="col-sm-auto px-3">
+                                    <div class="card col-sm-auto h-100">
+                                        <div class="card-header">
+                                            Summaries (Automatic)
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col-sm-auto my-auto flex-fill">Total Sales:</div>
+                                                    <div class="col-sm-auto">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text">$</div>
+                                                            <input type="text" class="form-control" id="rev-total" style="width: 95px;" placeholder="0.00" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col-sm-auto my-auto flex-fill">% as CC:</div>
+                                                    <div class="col-sm-auto">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" id="tips-cc-rate" style="width: 92px;" placeholder="0.00" disabled>
+                                                            <div class="input-group-text">%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col-sm-auto my-auto flex-fill">Tip Rate:</div>
+                                                    <div class="col-sm-auto">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" id="tips-rate" style="width: 92px;" placeholder="0.00" disabled>
+                                                            <div class="input-group-text">%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                    
+                                <!-- <div class="col-sm">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+                                            <span>Shift Notes (Optional)</span>
+                                            <div class="form-check form-check-inline mx-0 float-end" id="shift-valid">
+                                                <input class="form-check-input mx-0" type="checkbox" value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1"></label>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="card-body">
+                                            <textarea class="form-control h-100" id="shift-notes" disabled></textarea>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                                <div class="col-sm-auto px-3">
+                                    <div class="card col-sm-auto h-100">
+                                        <div class="card-header">
+                                            <span>Tip Rates</span>
+                                            <div class="form-check form-check-inline mx-0 float-end" id="tips-toggle">
+                                                <input class="form-check-input mx-0" type="checkbox" id="tips-check-input" value="">
+                                                <label class="form-check-label" for="inlineCheckbox1"></label>
+                                            </div>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col-sm-auto my-auto flex-fill">Bartender:</div>
+                                                    <div class="col-sm-auto">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control tip-rates-role" id="bartender-rate" value="75" style="width: 92px;" placeholder="75" disabled>
+                                                            <div class="input-group-text">%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col-sm-auto my-auto flex-fill">Barback:</div>
+                                                    <div class="col-sm-auto">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control tip-rates-role" id="barback-rate" value="18" style="width: 92px;" placeholder="18" disabled>
+                                                            <div class="input-group-text">%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                    
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col-sm-auto my-auto flex-fill">Security:</div>
+                                                    <div class="col-sm-auto">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control tip-rates-role" id="security-rate" value="7" style="width: 92px;" placeholder="7" disabled>
+                                                            <div class="input-group-text">%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="row my-3">
+    <div class="col-sm-auto my-auto">            
+        <h4 class="my-auto">Shift Information</h4>
+    </div>
+    <div class="col-sm-auto gx-0">
+        <p class="d-inline-flex my-auto">
+            <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="Collapse Shift Information Section">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </a>
+          </p>
+      </div>
+</div> -->
+
+<!-- <div class="row">
+    <div class="collapse show" id="collapseExample">
+        <div class="row">
+
+            <div class="col-sm-auto">
+                
+                <div class="card col-sm-auto h-100">
+                    <div class="card-header">
+                        Tip Information
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-sm-auto flex-fill my-auto">Cash Tips:</div>
+                                <div class="col-sm-auto">
+                                    <div class="input-group">
+                                        <div class="input-group-text" id="inputGroupPrepend">$</div>
+                                        <input type="text" class="form-control tip-input" id="cash-tips" style="width: 92px;" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-sm-auto flex-fill my-auto">CC Tips:</div>
+                                <div class="col-sm-auto">
+                                    <div class="input-group align-items-end">
+                                        <div class="input-group-text">$</div>
+                                        <input type="text" class="form-control tip-input" id="cc-tips" style="width: 92px;" id="cashTips" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-sm-auto flex-fill my-auto">Total Tips:</div>
+                                <div class="col-sm-auto">
+                                    <div class="input-group">
+                                        <div class="input-group-text">$</div>
+                                        <input type="text" class="form-control" style="width: 92px;" id="total-tips" placeholder="0.00" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <span>Midshift Pull (Optional)</span>
+                        <div class="form-check form-check-inline mx-0 float-end" id="midshift-toggle">
+                            <input class="form-check-input mx-0" type="checkbox" id="midshift-check-input" value="">
+                            <label class="form-check-label" for="inlineCheckbox1"></label>
+                        </div>
+                    </div>
+    
+                    
+                    <ul class="list-group list-group-flush">
+                        
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-auto flex-fill my-auto">CC Tips Pulled:</div>
+                                <div class="col-sm-auto">
+                                    <div class="input-group">
+                                        <div class="input-group-text">$</div>
+                                        <input type="text" class="form-control" id="cc-pulled" style="width: 92px;" placeholder="0.00" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-auto flex-fill my-auto">Time of Pull:</div>
+                                <div class="col-sm-auto">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="pull-time" style="width: 128px;" placeholder="" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-auto flex-fill my-auto">Tips to Distribute:</div>
+                                <div class="col-sm-auto">
+                                    <div class="input-group">
+                                        <div class="input-group-text">$</div>
+                                        <input type="text" class="form-control" id="tips-distribute" style="width: 92px;" placeholder="0.00" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-auto">
+                <div class="card col-sm-auto h-100">
+                    <div class="card-header">Summaries</div>
+                    <ul class="list-group list-group-flush">
+                        
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-sm-auto my-auto flex-fill">Total Sales:</div>
+                                <div class="col-sm-auto">
+                                    <div class="input-group">
+                                        <div class="input-group-text">$</div>
+                                        <input type="text" class="form-control" id="total-rev" style="width: 95px;" placeholder="0.00" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-sm-auto my-auto flex-fill">% as CC:</div>
+                                <div class="col-sm-auto">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="percentOnCard" style="width: 92px;" placeholder="0.00" disabled>
+                                        <div class="input-group-text">%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-sm-auto my-auto flex-fill">Tip Rate:</div>
+                                <div class="col-sm-auto">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="tip-rate" style="width: 92px;" placeholder="0.00" disabled>
+                                        <div class="input-group-text">%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <span>Shift Notes (Optional)</span>
+                        <div class="form-check form-check-inline mx-0 float-end" id="shift-valid">
+                            <input class="form-check-input mx-0" type="checkbox" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1"></label>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <textarea class="form-control h-100" id="shift-notes" disabled></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+{% endblock %}

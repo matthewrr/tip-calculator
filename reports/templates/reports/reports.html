@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+
+{%load plotly_dash%}
+
+
+<main>
+    {% include "./list.html" %} 
+
+
+
+    <div class="container">
+        <div class="d-none">{% block title %}{{title}} - Tip Calculator{% endblock %}</div>
+    
+        <div class="row">
+    
+            <div class="col-md-9">
+            <div class="pt-5 pb-1">
+                <h2>Reports</h2>
+                <p class="lead">Date Range. Button for today. 7 days, month. Compare Week over week. Latet Report.</p>
+            </div>
+            </div>
+        </div>
+
+
+
+    
+
+
+        <div class="row my-3">
+            <div class="col-2">
+                <div class="card">
+                    
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-center">Total Revenue</h5>
+                        <p class="card-text text-center">$10,000.00</p>
+                        <!-- last week arrow -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-center">Hours Worked</h5>
+                        <p class="card-text text-center">40.00</p>
+                        <!-- last week arrow -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-center">Tips Received</h5>
+                        <p class="card-text text-center">$1,000.00</p>
+                        <!-- last week arrow -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-center">Tip Rate</h5>
+                        <p class="card-text text-center">100.00%</p>
+                        <!-- last week arrow -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-center">Tips Difference</h5>
+                        <p class="card-text text-center">1.00% / $5.00</p>
+                        <!-- last week arrow -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-center">Last Item</h5>
+                        <p class="card-text text-center"># Goes Here</p>
+                        <!-- last week arrow -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        {% plotly_app name='SimpleExample' ratio=1 %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+
+
+
+{% endblock %}

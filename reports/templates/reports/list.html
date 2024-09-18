@@ -1,0 +1,41 @@
+{% load static %}
+{% block content %}
+
+<div class="container">
+    Date
+    Hours Worked
+    Tips Earned
+    View
+    Download
+    <div class="row">
+        <div class="col-5">
+            <table class="table table-sm table-hover display mt-2" id="myTable">
+                <thead>
+                    <tr>
+                        <th class="text-center" scope="col">Date</th>
+                        <th class="text-center" scope="col">Hours</th>
+                        <th scope="col">Tips</th>
+                        <th scope="col">V</th>
+                        <th scope="col">D</th>
+                        <!-- <th class="text-center" scope="col">Update</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for report in reports %}
+                    <tr>
+                        <td>{{report.start_date}}</td>
+                        <td>{{report.hour_worked}}</td>
+                        <td>{{report.tips_earned}}</td>
+                        <td>Download</td>
+                        <td>View</td>
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% load static %}
+{% block content %}
+<header class="p-3 text-bg-dark">
+    <div class="container">
+
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none gx-5">
+          <img src="{% static 'getdata/nYne-logo.svg' %}" alt="nYne Logo" height="32" class="d-inline-block align-text-top">
+        </a>
+        <ul class="nav bg-dark col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 px-4">
+          <li class="nav-item"><a href="{% url 'home' %}" class="nav-link px-2 {% if title == 'Home' %}text-secondary active{% else %}text-white{% endif %}" >Home</a></li>
+          <li class="nav-item"><a href="{% url 'reports' %}" class="nav-link px-2 {% if title == 'Reports' %}text-secondary active{% else %}text-white{% endif %}">Reports</a></li>
+          <li class="nav-item"><a href="{% url 'support' %}" class="nav-link px-2 {% if title == 'Support' %}text-secondary active{% else %}text-white{% endif %}">Support</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 {% if title == 'Contact' %}text-secondary active{% else %}text-white{% endif %}">Contact</a></li>
+          <li class="nav-item"><a href="{% url 'users' %}" class="nav-link px-2 {% if title == 'Users' %}text-secondary active{% else %}text-white{% endif %}">Users</a></li>
+        </ul>
+
+        <div class="text-end d-flex">
+          
+          {% if user.is_authenticated %}
+            <div class="m-auto px-4" id="user-id" data-user="{{user.pk}}">Hi, {{ user.first_name }}!</div>
+            <div>
+              <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" href="{% url 'logout' %}" class="btn btn-outline-light me-2">Logout</button>
+              </form>
+            </div>
+          {% else %}
+            <a type="submit" href="{% url 'login' %}" class="btn btn-outline-light me-2">Login</a>
+            <a type="submit" href="{% url 'signup' %}" class="btn btn-warning">Sign-up</a>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+{% endblock %}

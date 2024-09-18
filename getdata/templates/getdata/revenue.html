@@ -1,0 +1,54 @@
+{% load static %}
+{% block content %}
+
+<div class="col-sm-3" id="rev-column">
+    <div class="row">
+        <div class="col-sm-auto my-auto">           
+            <h4 class="my-auto">Revenue</h4>
+        </div>
+        <div class="col-sm-auto my-auto gx-0">
+            <select class="form-select" id="rev-select" aria-label="Select Revenue Input Type">
+                <option value="cumulative">Cumulative</option>
+                <option value="hourly">Hourly</option>
+            </select>
+        </div>
+    </div>
+        
+    <div class="row my-3">
+        <div class="col-sm-10" id="rev-all">
+        {% for civTime, milTime in hours_reg.items %} 
+        <div class="input-group my-1">
+            <span class="input-group-text">$</span>
+            <input type="text" class="form-control rev-input" name="{{ milTime }}" aria-label="Hourly Revenue">
+            <span class="input-group-text justify-content-center" style="width: 92px;">{{ civTime }}</span>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- #
+cash-tips
+cc-tips
+cc-pulled
+pull-time
+shift-input
+
+--
+rev-input
+
+id employees rows
+class employee row
+employee-select
+role-select
+start-time
+end-time
+hours-worked
+tips-earned
+tips-to-report
+
+rembeber to update ghost emplkoyee row -->
+
+
+
+{% endblock %}

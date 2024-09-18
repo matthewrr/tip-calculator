@@ -1,0 +1,98 @@
+{% load static %}
+{% block content %}
+
+
+<div class="col-sm-9">
+    <div class="row">  
+      <div class="col-sm-auto my-auto">           
+        <h4 class="my-auto">Employee Information</h4>
+      </div>
+      <div class="col-sm-auto gx-0">
+        <button type="button" class="btn btn-primary" id="add-employee">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="row g-2">
+        <div class="col-sm-auto mb-2">
+        </div>
+        <div class="col-sm-auto">
+    
+        </div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-auto"></div>
+        <div class="col-sm"></div>
+        <div class="col-sm text-center"></div>
+        <div class="col-sm-1 text-center"><strong>Hours</strong></div>
+        <div class="col-sm-1 text-center"><strong>Tips</strong></div>
+        <div class="col-sm-1 text-center"><strong>Claim</strong></div>
+    </div>
+  <form class="my-1" id="employee-rows" novalidate>
+
+    {% for x in "0123456789ab" %}
+      {% include "./employee-row.html" %} 
+    {% endfor %}
+  </form>
+
+  <div class="row g-2 mt-2">
+    <div class="col-sm-auto mb-2">
+    </div>
+    <div class="col-sm-auto">
+
+    </div>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-auto"></div>
+    <div class="col-sm"></div>
+    <div class="col-sm text-center"></div>
+    <div class="col-sm-1 text-center">
+        <input class="form-control-plaintext text-center border-top" id="sum-hours-worked" data-mins-worked="0" type="text" placeholder="0.00" aria-label="Total Hours Worked" readonly>
+    </div>
+      <div class="col-sm-1">
+        <input class="form-control-plaintext text-center border-top" id="total-tips-paid" type="text" placeholder="$0.00" aria-label="Total Tips Paid" readonly>
+      </div>
+
+    <div class="col-sm-1 text-center">
+        <input class="form-control-plaintext text-center border-top" id="total-tips-to-report" type="text" placeholder="$0.00" aria-label="Total Minimum Tips to Report" readonly>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+  <hr class="my-4">
+  
+  <div class="row">
+    {% include "./validate-modal.html" %}
+
+
+
+
+
+
+
+    <div class="col text-end">
+        <form method="post">
+        {% csrf_token %}
+      <!-- <button type="button" class="btn btn-primary" id="validate-timecards">Validate</button>
+      <button type="button" class="btn btn-primary" id="validate-button"  data-toggle="modal" data-target="#validate-modal">Validate Modal</button> -->
+      <button type="button" class="btn btn-primary" id="validate-timecards" data-bs-toggle="modal" data-bs-target="#validate-modal">
+        Validate
+      </button>
+      
+    
+
+      <!-- <button type="button" class="btn btn-primary" id="submit-timecards" disabled>Submit</button> -->
+    </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

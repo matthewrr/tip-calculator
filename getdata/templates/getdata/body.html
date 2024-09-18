@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<main>
+  <div class="container">
+    {% include "./top-section.html" %}
+    {% include "./employee-row-hidden.html" %}
+    {% include "./shift-information.html" %}
+    <hr class="my-4">
+    <div class="row g-5">
+      {% include "./revenue.html" %}
+      {% include "./employees.html" %}
+    </div>
+  </div>
+</main>
+
+{% endblock %}
